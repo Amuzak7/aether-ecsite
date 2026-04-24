@@ -147,7 +147,7 @@ export default function AboutPage() {
             style={{ position: "relative", aspectRatio: "3/4", overflow: "hidden", background: "#e7e5e4" }}
           >
             <Image
-              src="/images/products/oversized-trouser-black1.jpg"
+              src="/images/products/bottoms/oversized-trouser-black1.jpg"
               alt="The Brand"
               fill
               className="object-cover object-center"
