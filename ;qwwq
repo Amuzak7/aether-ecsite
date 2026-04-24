@@ -1,0 +1,118 @@
+Initial commit: AETHER EC site
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# interactive rebase in progress; onto 6e934b9
+# Last command done (1 command done):
+#    pick 2d124ea Initial commit: AETHER EC site
+# No commands remaining.
+# You are currently rebasing branch 'main' on '6e934b9'.
+#
+# Changes to be committed:
+#	new file:   .claude/launch.json
+#	modified:   .gitignore
+#	new file:   CLAUDE.md
+#	new file:   DESIGN.md
+#	new file:   README.md
+#	new file:   app/about/page.tsx
+#	new file:   app/account/page.tsx
+#	new file:   app/actions/inventory.ts
+#	new file:   app/cart/page.tsx
+#	new file:   app/checkout/page.tsx
+#	new file:   app/checkout/success/page.tsx
+#	new file:   app/coming-soon/page.tsx
+#	new file:   app/contact/page.tsx
+#	new file:   app/cookie-policy/page.tsx
+#	new file:   app/faq/page.tsx
+#	new file:   app/favorites/page.tsx
+#	new file:   app/globals.css
+#	new file:   app/layout.tsx
+#	new file:   app/login/page.tsx
+#	new file:   app/page.tsx
+#	new file:   app/privacy-policy/page.tsx
+#	new file:   app/products/ProductsClient.tsx
+#	new file:   app/products/[id]/page.tsx
+#	new file:   app/products/page.tsx
+#	new file:   app/signup/page.tsx
+#	new file:   app/specified-commercial-transactions/page.tsx
+#	new file:   app/terms-of-use/page.tsx
+#	new file:   components/BottomNav.tsx
+#	new file:   components/BrandStatement.tsx
+#	new file:   components/CartButton.tsx
+#	new file:   components/HeroSection.tsx
+#	new file:   components/NavMenu.tsx
+#	new file:   components/NewInSection.tsx
+#	new file:   components/ProductCard.tsx
+#	new file:   components/cart/CartItem.tsx
+#	new file:   components/cart/CartSummary.tsx
+#	new file:   components/contact/ContactForm.tsx
+#	new file:   components/faq/FaqAccordion.tsx
+#	new file:   components/product/ImageGallery.tsx
+#	new file:   components/product/ProductAccordion.tsx
+#	new file:   components/product/ProductInfo.tsx
+#	new file:   components/product/ProductListCard.tsx
+#	new file:   components/product/RelatedProducts.tsx
+#	new file:   context/AuthContext.tsx
+#	new file:   context/CartContext.tsx
+#	new file:   context/WishlistContext.tsx
+#	new file:   lib/products-db.ts
+#	new file:   lib/products.ts
+#	new file:   lib/supabase.ts
+#	new file:   next.config.ts
+#	new file:   package-lock.json
+#	new file:   package.json
+#	new file:   postcss.config.mjs
+#	new file:   public/images/hero/hero-main1.jpg
+#	new file:   public/images/hero/hero-main2.jpg
+#	new file:   public/images/hero/hero-main3.jpg
+#	new file:   public/images/hero/hero-main4.jpg
+#	new file:   public/images/products/accessories/gold-pierce1.jpg
+#	new file:   public/images/products/accessories/gold-pierce2.jpg
+#	new file:   public/images/products/accessories/silver-neckless1.jpg
+#	new file:   public/images/products/accessories/silver-neckless2.jpg
+#	new file:   public/images/products/accessories/silver-ring1.jpg
+#	new file:   public/images/products/accessories/silver-ring2.jpg
+#	new file:   public/images/products/accessories/silver-ring3.jpg
+#	new file:   public/images/products/accessories/silver-ring4.jpg
+#	new file:   public/images/products/accessories/wellington-sunglasses1.jpg
+#	new file:   public/images/products/accessories/wellington-sunglasses2.jpg
+#	new file:   public/images/products/bottoms/oversized-denim-damage1.jpg
+#	new file:   public/images/products/bottoms/oversized-denim-damage2.jpg
+#	new file:   public/images/products/bottoms/oversized-denim-damage3.jpg
+#	new file:   public/images/products/bottoms/oversized-denim-damage4.jpg
+#	new file:   public/images/products/bottoms/oversized-denim-lightblue.jpg
+#	new file:   public/images/products/bottoms/oversized-denim-rigid1.jpg
+#	new file:   public/images/products/bottoms/oversized-denim-rigid2.jpg
+#	new file:   public/images/products/bottoms/oversized-halfpants-grey.jpg
+#	new file:   public/images/products/bottoms/oversized-halfpants-white.jpg
+#	new file:   public/images/products/bottoms/oversized-trouser-black1.jpg
+#	new file:   public/images/products/bottoms/oversized-trouser-black2.jpg
+#	new file:   public/images/products/bottoms/oversized-trouser-black3.jpg
+#	new file:   public/images/products/bottoms/oversized-trouser-offwhite1.jpg
+#	new file:   public/images/products/bottoms/oversized-trouser-offwhite2.jpg
+#	new file:   public/images/products/outerwear/oversized-longsleeveshirt-black.jpg
+#	new file:   public/images/products/outerwear/oversized-shortsleeveshirt-white1.jpg
+#	new file:   public/images/products/outerwear/oversized-shortsleeveshirt-white2.jpg
+#	new file:   public/images/products/outerwear/oversized-shortsleeveshirt-white3.jpg
+#	new file:   public/images/products/shoes/black-leather-boots1.jpg
+#	new file:   public/images/products/shoes/black-leather-boots2.jpg
+#	new file:   public/images/products/shoes/black-leather-loafer1.jpg
+#	new file:   public/images/products/shoes/black-leather-loafer2.jpg
+#	new file:   public/images/products/shoes/white-canvas-sneaker1.jpg
+#	new file:   public/images/products/shoes/white-canvas-sneaker2.jpg
+#	new file:   public/images/products/shoes/white-canvas-sneaker3.jpg
+#	new file:   public/images/products/shoes/white-canvas-sneaker4.jpg
+#	new file:   public/images/products/tops/oversized-tshirt-beige.jpg
+#	new file:   public/images/products/tops/oversized-tshirt-grey.jpg
+#	new file:   public/images/products/tops/oversized-tshirt-white1.jpg
+#	new file:   public/images/products/tops/oversized-tshirt-white2.jpg
+#	new file:   public/images/products/tops/oversized-tshirt-white3.jpg
+#	new file:   public/images/products/tops/oversized-tshirt-white4.jpg
+#	new file:   public/images/products/tops/oversized-tshirt-white5.jpg
+#	new file:   public/images/products/tops/oversized-tshirt-white6.jpg
+#	new file:   public/images/products/tops/oversized-tshirt-white7.jpg
+#	new file:   public/images/products/tops/oversized-tshirt-white8.jpg
+#	new file:   supabase/schema.sql
+#	new file:   tsconfig.json
+#

@@ -1,18 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import ProductListCard, { type ListProduct } from "./product/ProductListCard";
 
-const newInProducts: ListProduct[] = [
-  { id: "oversized-tshirt-beige",           brand: "AETHER", name: "Oversized Tee — Beige",        price:  8800, image: "/images/products/oversized-tshirt-beige.jpg",            category: "Tops" },
-  { id: "oversized-tshirt-white",           brand: "AETHER", name: "Oversized Tee — White",         price:  8800, image: "/images/products/oversized-tshirt-white1.jpg",            category: "Tops" },
-  { id: "oversized-tshirt-grey",            brand: "AETHER", name: "Oversized Tee — Charcoal",      price:  8800, image: "/images/products/oversized-tshirt-grey.jpg",              category: "Tops" },
-  { id: "oversized-shortsleeveshirt-white", brand: "AETHER", name: "S/S Shirt — White",             price: 14300, image: "/images/products/oversized-shortsleeveshirt-white1.jpg",  category: "Tops" },
-  { id: "oversized-denim-lightblue",        brand: "AETHER", name: "Denim Jacket — Light Blue",     price: 28600, image: "/images/products/oversized-denim-lightblue.jpg",          category: "Outerwear" },
-  { id: "oversized-halfpants-white",        brand: "AETHER", name: "Wide Half Pants — White",       price: 12100, image: "/images/products/oversized-halfpants-white.jpg",          category: "Bottoms" },
-  { id: "oversized-trouser-black",          brand: "AETHER", name: "Wide Trousers — Black",         price: 16500, image: "/images/products/oversized-trouser-black1.jpg",           category: "Bottoms" },
-  { id: "oversized-trouser-offwhite",       brand: "AETHER", name: "Wide Trousers — Off White",     price: 16500, image: "/images/products/oversized-trouser-offwhite1.jpg",        category: "Bottoms" },
-];
-
-export default function NewInSection() {
+export default function NewInSection({ products }: { products: ListProduct[] }) {
   return (
     <section
       id="new-in"
@@ -36,12 +27,20 @@ export default function NewInSection() {
         </h2>
       </div>
 
-      {/* Product grid: 4 cols on desktop, 2 on mobile */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-        {newInProducts.map((product) => (
-          <ProductListCard key={product.id} product={product} />
-        ))}
-      </div>
+      {/* Product grid */}
+      {products.length > 0 ? (
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          {products.map((product) => (
+            <ProductListCard key={product.id} product={product} />
+          ))}
+        </div>
+      ) : (
+        <div style={{ paddingTop: "4rem", textAlign: "center" }}>
+          <p style={{ fontSize: "11px", letterSpacing: "0.2em", color: "#a8a29e", textTransform: "uppercase" }}>
+            No products found
+          </p>
+        </div>
+      )}
 
       {/* Browse Collection button */}
       <div style={{ display: "flex", justifyContent: "center", marginTop: "4rem" }}>
@@ -56,9 +55,7 @@ export default function NewInSection() {
       </div>
 
       {/* Bottom border */}
-      <div
-        style={{ marginTop: "4rem", borderBottom: "20px solid #1c1917" }}
-      />
+      <div style={{ marginTop: "4rem", borderBottom: "20px solid #1c1917" }} />
     </section>
   );
 }

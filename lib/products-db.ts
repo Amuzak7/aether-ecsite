@@ -63,10 +63,15 @@ export async function getProductsForListing(): Promise<ListProduct[]> {
   const { data, error } = await supabase
     .from("products")
     .select("slug, name, brand, price, image_url, category")
-    .order("id", { ascending: false });
+    .order("slug", { ascending: true });
 
   if (error || !data) {
-    console.error("Supabase error in getProductsForListing:", error);
+    console.error("Supabase error in getProductsForListing:", {
+      message: error?.message,
+      code: error?.code,
+      details: error?.details,
+      hint: error?.hint,
+    });
     return [];
   }
 
