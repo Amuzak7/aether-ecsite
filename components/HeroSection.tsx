@@ -91,7 +91,7 @@ export default function HeroSection() {
         className="absolute top-0 left-0 w-full z-20 py-7 flex items-center justify-between"
         style={{ paddingLeft: "clamp(0.75rem, 2vw, 2.5rem)", paddingRight: "clamp(0.75rem, 2vw, 2.5rem)" }}
       >
-        {/* Left: Brand name + Menu button */}
+        {/* Left: Brand name + Menu button (desktop only) */}
         <div className="flex items-center gap-6">
           <span
             className="text-white font-light"
@@ -100,6 +100,7 @@ export default function HeroSection() {
             AETHER
           </span>
           <button
+            className="hidden md:block"
             onClick={() => setMenuOpen(true)}
             style={{
               fontSize: "10px",
@@ -128,9 +129,10 @@ export default function HeroSection() {
           </button>
         </div>
 
-        {/* Right: Icons */}
+        {/* Right: Icons (desktop) + Menu button (mobile) */}
         <div className="flex items-center gap-5">
           <Link
+            className="hidden md:block"
             href="/cart"
             aria-label="Cart"
             style={{ color: "rgba(255,255,255,0.8)" }}
@@ -140,6 +142,7 @@ export default function HeroSection() {
             <IconShoppingCart size={20} stroke={1.5} />
           </Link>
           <Link
+            className="hidden md:block"
             href="/favorites"
             aria-label="Favourites"
             style={{ color: "rgba(255,255,255,0.8)" }}
@@ -149,6 +152,7 @@ export default function HeroSection() {
             <IconHeart size={20} stroke={1.5} />
           </Link>
           <Link
+            className="hidden md:block"
             href="/account"
             aria-label="Account"
             style={{ color: "rgba(255,255,255,0.8)" }}
@@ -157,6 +161,23 @@ export default function HeroSection() {
           >
             <IconUser size={20} stroke={1.5} />
           </Link>
+          <button
+            className="md:hidden"
+            onClick={() => setMenuOpen(true)}
+            style={{
+              fontSize: "10px",
+              letterSpacing: "0.25em",
+              textTransform: "uppercase",
+              color: "#ffffff",
+              background: "transparent",
+              border: "1px solid rgba(255,255,255,0.6)",
+              borderRadius: "9999px",
+              padding: "0.3rem 0.9rem",
+              cursor: "pointer",
+            }}
+          >
+            menu
+          </button>
         </div>
       </header>
 

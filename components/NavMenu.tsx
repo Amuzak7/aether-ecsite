@@ -5,10 +5,13 @@ import Link from "next/link";
 import { IconX } from "@tabler/icons-react";
 
 const navLinks = [
-  { label: "NEW IN", href: "/#new-in" },
-  { label: "PRODUCTS", href: "/products" },
-  { label: "ABOUT", href: "/about" },
-  { label: "CONTACT", href: "/contact" },
+  { label: "CART",     href: "/cart",      mobileOnly: true  },
+  { label: "WISHLIST", href: "/favorites", mobileOnly: true  },
+  { label: "NEW IN",   href: "/#new-in",   mobileOnly: false },
+  { label: "PRODUCTS", href: "/products",  mobileOnly: false },
+  { label: "ABOUT",    href: "/about",     mobileOnly: false },
+  { label: "CONTACT",  href: "/contact",   mobileOnly: false },
+  { label: "ACCOUNT",  href: "/account",   mobileOnly: true  },
 ];
 
 interface NavMenuProps {
@@ -41,14 +44,15 @@ export default function NavMenu({ isOpen, onClose }: NavMenuProps) {
 
       {/* Slide-in panel */}
       <div
-        className={`fixed top-0 left-0 h-full w-80 z-50 flex flex-col
+        className={`fixed top-0 h-full w-80 z-50 flex flex-col
                     transition-transform duration-500 ease-in-out
-                    ${isOpen ? "translate-x-0" : "-translate-x-full"}`}
+                    right-0 md:right-auto md:left-0
+                    border-l border-white/15 md:border-l-0 md:border-r md:border-white/15
+                    ${isOpen ? "translate-x-0" : "translate-x-full md:-translate-x-full"}`}
         style={{
           background: "rgba(255,255,255,0.08)",
           backdropFilter: "blur(24px)",
           WebkitBackdropFilter: "blur(24px)",
-          borderRight: "1px solid rgba(255,255,255,0.15)",
         }}
       >
         {/* Header */}
@@ -84,8 +88,9 @@ export default function NavMenu({ isOpen, onClose }: NavMenuProps) {
               key={link.label}
               href={link.href}
               onClick={onClose}
-              className="text-white/80 hover:text-white text-sm tracking-[0.2em]
-                         py-4 border-b border-white/10 transition-colors duration-200"
+              className={`text-white/80 hover:text-white text-sm tracking-[0.2em]
+                         py-4 border-b border-white/10 transition-colors duration-200
+                         ${link.mobileOnly ? "md:hidden" : ""}`}
             >
               {link.label}
             </Link>
@@ -93,7 +98,7 @@ export default function NavMenu({ isOpen, onClose }: NavMenuProps) {
         </nav>
 
         {/* Footer */}
-        <div className="pr-8 py-8" style={{ paddingLeft: "clamp(0.75rem, 2vw, 2.5rem)" }}>
+        <div className="pr-8 py-6" style={{ paddingLeft: "clamp(0.75rem, 2vw, 2.5rem)" }}>
           <p className="text-white/30 text-xs tracking-widest">
             © 2025 AETHER
           </p>
