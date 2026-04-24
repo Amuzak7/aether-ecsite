@@ -24,13 +24,6 @@ const WishlistContext = createContext<WishlistContextType | null>(null);
 
 const STORAGE_KEY = "aether-wishlist";
 
-const dummyItems: WishlistItem[] = [
-  { id: "oversized-tshirt-white", name: "Oversized Tee — White", brand: "AETHER", price: 8800, image: "/images/products/oversized-tshirt-white1.jpg", size: "M", color: "White" },
-  { id: "oversized-denim-lightblue", name: "Denim Jacket — Light Blue", brand: "AETHER", price: 28600, image: "/images/products/oversized-denim-lightblue.jpg", size: "L", color: "Light Blue" },
-  { id: "oversized-trouser-offwhite", name: "Wide Trousers — Off White", brand: "AETHER", price: 16500, image: "/images/products/oversized-trouser-offwhite1.jpg", size: "M", color: "Off White" },
-  { id: "oversized-shortsleeveshirt-white", name: "S/S Shirt — White", brand: "AETHER", price: 14300, image: "/images/products/oversized-shortsleeveshirt-white1.jpg", size: "M", color: "White" },
-];
-
 export function WishlistProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<WishlistItem[]>([]);
   const [initialized, setInitialized] = useState(false);
@@ -38,9 +31,9 @@ export function WishlistProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     try {
       const stored = localStorage.getItem(STORAGE_KEY);
-      setItems(stored ? JSON.parse(stored) : dummyItems);
+      setItems(stored ? JSON.parse(stored) : []);
     } catch {
-      setItems(dummyItems);
+      setItems([]);
     }
     setInitialized(true);
   }, []);

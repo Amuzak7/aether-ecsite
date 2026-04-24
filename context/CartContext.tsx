@@ -27,40 +27,16 @@ const CartContext = createContext<CartContextType | null>(null);
 
 const STORAGE_KEY = "aether-cart";
 
-const dummyItems: CartItem[] = [
-  {
-    id: "oversized-tshirt-beige",
-    name: "Oversized Tee — Beige",
-    brand: "AETHER",
-    price: 8800,
-    image: "/images/products/oversized-tshirt-beige.jpg",
-    size: "M",
-    color: "Beige",
-    quantity: 1,
-  },
-  {
-    id: "oversized-trouser-black",
-    name: "Wide Trousers — Black",
-    brand: "AETHER",
-    price: 16500,
-    image: "/images/products/oversized-trouser-black1.jpg",
-    size: "L",
-    color: "Black",
-    quantity: 2,
-  },
-];
-
 export function CartProvider({ children }: { children: React.ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
   const [initialized, setInitialized] = useState(false);
 
-  // Load from localStorage (or fall back to dummy data)
   useEffect(() => {
     try {
       const stored = localStorage.getItem(STORAGE_KEY);
-      setItems(stored ? JSON.parse(stored) : dummyItems);
+      setItems(stored ? JSON.parse(stored) : []);
     } catch {
-      setItems(dummyItems);
+      setItems([]);
     }
     setInitialized(true);
   }, []);
